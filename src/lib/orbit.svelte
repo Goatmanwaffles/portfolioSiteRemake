@@ -23,8 +23,8 @@ import { onMount } from 'svelte';
           return{
                radius: Math.random() * (maxRadius - minRadius) + minRadius,
                angle: Math.random() * Math.PI * 2,
-               speed: Math.random() * 0.0002 + 0.0005,
-               size: Math.random() * 4.5 + 0.5,
+               speed: Math.random() * 0.0002 + 0.0001,
+               size: Math.random() * 35+5,
                opacity: 0.4,
           };
      }
@@ -33,7 +33,7 @@ import { onMount } from 'svelte';
           const particles: Particle[] = [];
 
           for(let i = 0; i < particleCount; i++){
-               particles.push(createParticle(15, 250))
+               particles.push(createParticle(150, 400))
           }
 
           return{
@@ -45,7 +45,7 @@ import { onMount } from 'svelte';
 
      function initializeAnchors(width:number, height:number, anchorCount:number){
           anchors.length = 0; //Clear existing anchors
-          const particleCount = 15;
+          const particleCount = 5;
           
           for(let i = 0; i < anchorCount; i++){
                const x = Math.random() * width;
