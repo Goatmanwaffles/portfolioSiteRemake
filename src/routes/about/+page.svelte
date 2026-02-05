@@ -8,7 +8,7 @@
      <NavBar/>
      <div class="flex flex-col mt-1/3 ml-16 mr-16">
           
-     <div class="flex items-center justify-center mt-32">
+     <div class="flex items-center justify-center mt-32 mb-8">
           <h1 class="text-white text-5xl font-bold font-sans">About Me</h1>
      </div>
      <div class="grid grid-cols-2 ml-32 mr-32">
@@ -42,7 +42,7 @@
           <h2 class="text-pink-500 text-4xl justify-center self-auto font-bold text-center">Experience</h2>
 
           <div class="space-y-8 mt-8">
-               <div class="bg-gray-700 p-8 rounded-lg shadow-lg">
+               <div class="bg-gray-700 p-8 rounded-lg shadow-lg ">
                     <h3 class="justify-center text-2xl font-bold text-pink-500">Shift Lead</h3>
                     <p class="font-light text-gray-400">Heinen's Grocery Store</p>
                     <p class="font-light text-gray-400">2023-Present</p>
@@ -60,9 +60,9 @@
                     <p class="font-light text-gray-400">All Around Children Child Care</p>
                     <p class="font-light text-gray-400">2025-Present</p>
                     <ul class="text-white list-outside list-disc space-y-2 font-base">
-                         <li>Lead a team of 20+ retail associates, performing front end duties and ensuring smooth store operations.</li>
-                         <li>Consistently exceeded customer expectations through professional and empathetic interactions, handling refunds, outreach, and issue resolution to ensure customer satisfaction.</li>
-                         <li>Managed scheduling and task delegation through high pressure environments, ensuring smooth workflow and proper staff management.</li>
+                         <li>Developed a react based data management app for internal buissness use.</li>
+                         <li>Aggregated and normalized multiple sources of data together into dashboard systems, improving visibility and team efficiency.</li>
+                         <li>Designed and implemented a company-wide scoring system allowing administrators to rank branch centers and quickly identify performance gaps.</li>
                     </ul>
                </div>
           </div>

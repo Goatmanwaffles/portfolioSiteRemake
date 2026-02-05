@@ -28,10 +28,10 @@
      border-radius: { scrolled ? '9999px' : '0%'}; 
      margin-top: { scrolled ? '25px' : '0'}">
 
-          <div class="grid grid-cols-3 gap-8 mt-auto mb-auto">
-               <a href="/about">About Me</a>
-               <a href="/">Home</a>
-               <a href="/projects">Projects</a>
+          <div class="grid grid-cols-3 gap-8 mt-auto mb-auto font-bold text-center">
+               <a class="rounded-lg pl-2 pr-2 delay-0 duration-250 ease-in-out hover:bg-stone-300" href="/about">About Me</a>
+               <a class="rounded-lg pl-2 pr-2 delay-0 duration-250 ease-in-out hover:bg-stone-300" href="/">Home</a>
+               <a class="rounded-lg pl-2 pr-2 delay-0 duration-250 ease-in-out hover:bg-stone-300" href="/projects">Projects</a>
           </div>
      </div>
 </nav>

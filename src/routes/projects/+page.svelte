@@ -18,7 +18,7 @@
             <!-- Project Cards -->
             <div class="grid grid-cols-2 gap-8">
 
-                <div class="bg-gray-700 p-8 rounded-lg shadow-lg max-h-60">
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg max-h-60 transition delay-0 duration-250 ease-in-out hover:translate-y-2 hover:scale-105 hover:bg-gray-600">
                     <div class="grid grid-cols-2 gap-8">
                         <div>
                             <h3 class="font-bold text-pink-400 text-2xl">SteamSpective</h3>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-700 p-8 rounded-lg shadow-lg max-h-60">
+                <div class="bg-gray-700 p-8 rounded-lg shadow-lg max-h-60 transition delay-0 duration-250 ease-in-out hover:translate-y-2 hover:scale-105 hover:bg-gray-600">
                     <div class="grid grid-cols-2 gap-8">
                         <div>
                             <h3 class="font-bold text-pink-400 text-2xl">Meal Prep Assistant</h3>
