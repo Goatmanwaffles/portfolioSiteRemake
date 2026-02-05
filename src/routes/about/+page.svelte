@@ -69,7 +69,7 @@
 
           <div class="space-y-8 mt-8 flex flex-col justify-center">
                <h2 class="text-pink-500 text-4xl justify-center self-auto font-bold text-center">Want to learn more?</h2>
-               <a href="/resume" class="bg-gradient-to-r from-pink-500 to-pink-400 text-white text-center font-bold text-xl py-5 px-12 rounded-xl shadow-xl hover:from-pink-600 hover:to-pink-500 hover:scale-105 transition transform duration-300">My Resume</a>
+               <a href="/resume.pdf" download class="bg-gradient-to-r from-pink-500 to-pink-400 text-white text-center font-bold text-xl py-5 px-12 rounded-xl shadow-xl hover:from-pink-600 hover:to-pink-500 hover:scale-105 transition transform duration-300">My Resume</a>
           </div>
           
       </div>
