@@ -5,7 +5,7 @@
     import WIPIMG from '$lib/assets/WIP.png'
 </script>
 
-<div class="bg-gray-800 h-full w-full">
+<div class="bg-gray-800 min-h-screen w-full">
     <NavBar/>
     <div class="flex flex-col mt-1/3 ml-16 mr-16">
         <div class="flex items-center justify-center mt-32">
