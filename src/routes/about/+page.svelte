@@ -6,22 +6,17 @@
 
 <div class="bg-gray-800 h-fill w-full">
      <NavBar/>
-     <div class="flex flex-col mt-1/3 ml-16 mr-16">
-          
-     <div class="flex items-center justify-center mt-32 mb-8">
+     <div class="flex flex-col ml-4 mr-4 lg:ml-16 lg:mr-16 py-16">
+     <div class="space-y-12 text-center max-w-4xl mx-auto px-4 sm:px-0 py-2"> 
           <h1 class="text-white text-5xl font-bold font-sans">About Me</h1>
-     </div>
-     <div class="grid grid-cols-2 ml-32 mr-32">
-     <div class="ml-32">
           <p class="text-white text-xl">Hello! I'm Logan, a professional developer and student at Kent State University. I am currently studying Computer Science as a sophmore, with a focus in software and web development.</p>
-     </div>
-     <div>
           <img class="h-96 w-96 object-contain" src={logan} alt="">
      </div>
      </div>
+
      <div class="flex items-center flex-col w-full mt-32">
           <h2 class="text-pink-500 text-4xl justify-center self-auto font-bold">My</h2>
-          <div class="grid grid-cols-3 gap-16 justify-center self-center text-center mt-8">
+          <div class="grid grid-rows-3 lg:grid-rows-1 lg:grid-cols-3 gap-16 justify-center self-center text-center mt-8">
                <div class="bg-gray-700 p-8 rounded-lg shadow-lg">
                     <h3 class="justify-center text-3xl font-semibold text-pink-500">Past</h3>
                     <p class="text-white justify-center">Ever since I was a kid I have been interesed in computers. My parents bought me my first PC for my 10th birthday and ever since then I have been interested in programming and the technology behind computers. Young me loved to play RTS and factory builder games which gave me the kick I needed for making things. I loved to take programming classes in middle school, making over the top class projects to try and learn more. I also had various failed ventures into game programming with my friends during our lunch periods, making pygame projects before any of us knew what a game engine was.</p>
@@ -73,5 +68,4 @@
           </div>
           
       </div>
-</div>
 </div>
