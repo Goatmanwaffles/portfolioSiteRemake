@@ -1,6 +1,6 @@
 <script lang='ts'>
      import NavBar from '$lib/nav.svelte';
-     import placeholder from '$lib/assets/1.jpg'
+     import logan from '$lib/assets/Logan.jpg'
 </script>
 
 
@@ -16,7 +16,7 @@
           <p class="text-white text-xl">Hello! I'm Logan, a professional developer and student at Kent State University. I am currently studying Computer Science as a sophmore, with a focus in software and web development.</p>
      </div>
      <div>
-          <img class="h-96 w-96 object-contain" src={placeholder} alt="">
+          <img class="h-96 w-96 object-contain" src={logan} alt="">
      </div>
      </div>
      <div class="flex items-center flex-col w-full mt-32">
