@@ -14,10 +14,13 @@ import { onMount } from 'svelte';
           speed: number;
           size: number;
           opacity: number;
+          force: number;
      };
 
      let anchors: Anchor[] = [];
      let canvas: HTMLCanvasElement;
+     let mouseX = 0;
+     let mouseY = 0;
 
      function createParticle(minRadius: number, maxRadius:number): Particle{
           return{
@@ -26,6 +29,7 @@ import { onMount } from 'svelte';
                speed: Math.random() * 0.0002 + 0.0001,
                size: Math.random() * 35+5,
                opacity: 0.4,
+               force: 5,
           };
      }
 
@@ -68,8 +72,21 @@ import { onMount } from 'svelte';
 
                     //Update Position
                     p.angle += p.speed;
-                    const x = anchor.x + Math.cos(p.angle) * p.radius;
-                    const y = anchor.y + Math.sin(p.angle) * p.radius;
+                    let x = anchor.x + Math.cos(p.angle) * p.radius;
+                    let y = anchor.y + Math.sin(p.angle) * p.radius;
+
+                    //Apply mouse pull
+                    const dx = mouseX - x;
+                    const dy = mouseY - y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    const maxDistance = 100;
+
+                    if (distance < maxDistance && distance > 0) {
+                         const force = (1 - distance / maxDistance) * p.force;
+                         x -= (dx / distance) * force;
+                         y -= (dy / distance) * force;
+                         p.radius += (dx / distance) * force;
+                    }
 
                     //Draw Particle
                     ctx.beginPath();
@@ -79,6 +96,8 @@ import { onMount } from 'svelte';
                     
                }
           }
+
+
           requestAnimationFrame(animate);
      }
 
@@ -101,11 +120,19 @@ import { onMount } from 'svelte';
         initializeAnchors(rect.width, rect.height, 35);
     }
 
+    function handleMouseMove(e: MouseEvent) {
+         const rect = canvas.getBoundingClientRect();
+         mouseX = e.clientX - rect.left;
+         mouseY = e.clientY - rect.top;
+         console.log(`Updating mouse: ${mouseX}, ${mouseY}`);
+    }
+
     // Initial sizing
     resizeCanvas();
 
     // Optional: resize listener
     window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('mousemove', handleMouseMove);
 
     // Start animation
     animate();
@@ -113,6 +140,7 @@ import { onMount } from 'svelte';
     // Cleanup listener on destroy
     return () => {
         window.removeEventListener('resize', resizeCanvas);
+        window.removeEventListener('mousemove', handleMouseMove);
     };
     
 });
