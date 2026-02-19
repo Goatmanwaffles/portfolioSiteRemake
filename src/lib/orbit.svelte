@@ -79,13 +79,13 @@ import { onMount } from 'svelte';
                     const dx = mouseX - x;
                     const dy = mouseY - y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
-                    const maxDistance = 100;
+                    const maxDistance = 200;
 
                     if (distance < maxDistance && distance > 0) {
                          const force = (1 - distance / maxDistance) * p.force;
                          x -= (dx / distance) * force;
                          y -= (dy / distance) * force;
-                         p.radius += (dx / distance) * force;
+                         p.radius += (Math.sqrt(dx * dx + dy * dy) / distance) * force;
                     }
 
                     //Draw Particle
