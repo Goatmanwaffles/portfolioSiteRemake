@@ -163,7 +163,6 @@ import { onMount } from 'svelte';
 
 <svelte:window bind:devicePixelRatio={dpr} />
 
-<p>Current Device Pixel Ratio: {dpr}</p>
 
      <canvas
   bind:this={canvas}
