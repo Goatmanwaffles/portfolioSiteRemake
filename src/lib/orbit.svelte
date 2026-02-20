@@ -21,6 +21,9 @@ import { onMount } from 'svelte';
      let canvas: HTMLCanvasElement;
      let mouseX = 0;
      let mouseY = 0;
+     let dpr = $state(1);
+
+     
 
      function createParticle(minRadius: number, maxRadius:number): Particle{
           return{
@@ -106,36 +109,47 @@ import { onMount } from 'svelte';
     const ctx = canvas.getContext('2d');
     if (!ctx || ctx == null) return;
 
+    // Set initial DPR value on client
+    dpr = window.devicePixelRatio;
+
     function resizeCanvas() {
      if (!ctx || ctx == null) return;
-        const dpr = window.devicePixelRatio || 1;
-        const rect = canvas.getBoundingClientRect();
+        const dprValue = window.devicePixelRatio || 1;
+        const displayWidth = canvas.clientWidth;
+        const displayHeight = canvas.clientHeight;
 
-     canvas.width = canvas.clientWidth;
-     canvas.height = canvas.clientHeight;
+        // Set the canvas pixel dimensions
+        canvas.width = displayWidth * dprValue;
+        canvas.height = displayHeight * dprValue;
 
+        // Scale context to match device pixel ratio
+        ctx.scale(dprValue, dprValue);
 
-        ctx.scale(dpr, dpr);
-        // Reinitialize anchors in layout pixels
-        initializeAnchors(rect.width, rect.height, 35);
+        // Reinitialize anchors in display pixels (not pixel dimensions)
+        initializeAnchors(displayWidth, displayHeight, 35);
     }
 
     function handleMouseMove(e: MouseEvent) {
          const rect = canvas.getBoundingClientRect();
          mouseX = e.clientX - rect.left;
          mouseY = e.clientY - rect.top;
-         console.log(`Updating mouse: ${mouseX}, ${mouseY}`);
     }
 
     // Initial sizing
     resizeCanvas();
 
-    // Optional: resize listener
+    
     window.addEventListener('resize', resizeCanvas);
     window.addEventListener('mousemove', handleMouseMove);
 
     // Start animation
     animate();
+
+    // Run code whenever zoom (dpr) changes
+    $effect(() => {
+        dpr;
+        resizeCanvas()
+    });
 
     // Cleanup listener on destroy
     return () => {
@@ -147,6 +161,9 @@ import { onMount } from 'svelte';
 
 </script>
 
+<svelte:window bind:devicePixelRatio={dpr} />
+
+<p>Current Device Pixel Ratio: {dpr}</p>
 
      <canvas
   bind:this={canvas}
