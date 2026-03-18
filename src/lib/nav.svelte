@@ -35,10 +35,12 @@
      >
 
           <!-- Desktop Links -->
-          <div class="hidden lg:grid grid-cols-3 gap-8 font-bold text-center">
+          <div class="hidden lg:grid grid-cols-5 gap-4 font-bold text-center">
                <a class="nav-link" href="/about">About Me</a>
-               <a class="nav-link" href="/">Home</a>
                <a class="nav-link" href="/projects">Projects</a>
+               <a class="nav-link" href="/">Home</a>
+               <a class="nav-link" href="/education">Education</a>
+               <a class="nav-link" href="/contact">Contact Me</a>
           </div>
 
           <!-- Mobile Hamburger Menu -->
